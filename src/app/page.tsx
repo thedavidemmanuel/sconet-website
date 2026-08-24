@@ -1,9 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-
-const line = "oklch(0.9 0.01 150)";
-const forest = "oklch(0.33 0.075 155)";
-const rust = "oklch(0.58 0.14 38)";
+import SiteHeader from "@/components/SiteHeader";
+import { line, forest, rust } from "@/lib/theme";
 
 const stats = [
   { number: "5+", label: "African Countries Engaged" },
@@ -134,31 +132,7 @@ function Eyebrow({ children, color = rust }: { children: ReactNode; color?: stri
 export default function Home() {
   return (
     <div>
-      {/* NAV */}
-      <header
-        className="sticky top-0 z-50 border-b backdrop-blur-sm"
-        style={{ background: "oklch(0.98 0.006 95 / 0.92)", borderColor: line }}
-      >
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6 px-8 py-4 max-[900px]:[row-gap:14px] max-[600px]:px-5">
-          <a href="#home" className="flex items-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/S-CONET%20Logo.svg" alt="S-CONET" className="h-9 w-auto" />
-          </a>
-          <nav className="flex flex-wrap gap-6 text-sm font-semibold max-[900px]:order-3 max-[900px]:w-full max-[900px]:justify-center max-[900px]:gap-[18px]">
-            <a href="#about">About</a>
-            <a href="#what-we-do">What We Do</a>
-            <a href="#impact">Impact</a>
-            <a href="#get-involved">Get Involved</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <a
-            href="#get-involved"
-            className="btn-rust rounded-full px-[18px] py-2.5 text-sm font-bold text-white"
-          >
-            Partner With Us
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* HERO */}
       <section
@@ -251,7 +225,7 @@ export default function Home() {
         className="mx-auto max-w-[1200px] px-8 py-[90px] max-[900px]:py-14 max-[600px]:px-5"
       >
         <Eyebrow>About Us</Eyebrow>
-        <h2 className="m-0 mb-6 font-display text-[36px] font-extrabold tracking-[-0.01em]">
+        <h2 className="m-0 mb-6 font-display text-[26px] font-extrabold tracking-[-0.01em] sm:text-[36px]">
           Who We Are
         </h2>
         <div className="grid grid-cols-[1.1fr_0.9fr] items-center gap-12 max-[900px]:grid-cols-1">
@@ -278,7 +252,7 @@ export default function Home() {
             alt="S-CONET team and community fieldwork"
             width={1456}
             height={1088}
-            className="h-[340px] w-full rounded-[14px] object-cover"
+            className="h-[220px] w-full rounded-[14px] object-cover sm:h-[280px] lg:h-[340px]"
           />
         </div>
         <div className="mt-12">
@@ -307,7 +281,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1200px] px-8 py-[90px] max-[900px]:py-14 max-[600px]:px-5">
           <div className="grid grid-cols-2 items-stretch gap-6 max-[900px]:grid-cols-1">
             <div
-              className="flex flex-col rounded-2xl p-11"
+              className="flex flex-col rounded-2xl p-6 sm:p-8 lg:p-11"
               style={{ background: "oklch(0.94 0.02 145)" }}
             >
               <div className="mb-6 flex items-center gap-3">
@@ -325,7 +299,7 @@ export default function Home() {
                 </span>
               </div>
               <p
-                className="m-0 text-2xl leading-[1.35] font-display font-bold tracking-[-0.015em]"
+                className="m-0 text-xl leading-[1.35] font-display font-bold tracking-[-0.015em] sm:text-2xl"
                 style={{ color: "oklch(0.2 0.02 150)" }}
               >
                 A sub-Saharan Africa where every snakebite victim, regardless
@@ -335,7 +309,7 @@ export default function Home() {
             </div>
             <div
               id="mission"
-              className="flex flex-col rounded-2xl p-11"
+              className="flex flex-col rounded-2xl p-6 sm:p-8 lg:p-11"
               style={{ background: "oklch(0.26 0.065 158)" }}
             >
               <div className="mb-6 flex items-center gap-3">
@@ -352,7 +326,7 @@ export default function Home() {
                   Our Mission
                 </span>
               </div>
-              <p className="m-0 text-2xl leading-[1.35] font-display font-bold tracking-[-0.015em] text-white">
+              <p className="m-0 text-xl leading-[1.35] font-display font-bold tracking-[-0.015em] text-white sm:text-2xl">
                 We turn evidence into action — training frontline health
                 workers, driving research, securing antivenom supply, and
                 shifting policy, together with the communities we serve.
@@ -370,7 +344,7 @@ export default function Home() {
       >
         <div className="mx-auto max-w-[1200px] px-8 py-[90px] max-[900px]:py-14 max-[600px]:px-5">
           <Eyebrow>What We Do</Eyebrow>
-          <h2 className="m-0 mb-10 font-display text-[36px] font-extrabold tracking-[-0.01em]">
+          <h2 className="m-0 mb-10 font-display text-[26px] font-extrabold tracking-[-0.01em] sm:text-[36px]">
             How We Get There
           </h2>
           <div>
@@ -379,7 +353,7 @@ export default function Home() {
               return (
                 <div
                   key={p.title}
-                  className={`grid min-w-0 grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-14 py-10 max-[900px]:grid-cols-1 ${
+                  className={`grid min-w-0 grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-14 py-10 max-[900px]:grid-cols-1 max-[900px]:gap-6 ${
                     imageFirst ? "" : "grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]"
                   } ${i === 0 ? "" : "border-t"} ${i === pillars.length - 1 ? "pb-0" : ""}`}
                   style={i === 0 ? undefined : { borderColor: "oklch(0.92 0.008 150)" }}
@@ -393,17 +367,17 @@ export default function Home() {
                         height={p.imageHeight}
                         className="aspect-[4/3] w-full rounded-[14px] object-cover max-[900px]:order-1"
                       />
-                      <PillarText pillar={p} />
+                      <PillarText pillar={p} className="max-[900px]:order-2" />
                     </>
                   ) : (
                     <>
-                      <PillarText pillar={p} />
+                      <PillarText pillar={p} className="max-[900px]:order-2" />
                       <Image
                         src={p.image}
                         alt={p.imageAlt}
                         width={p.imageWidth}
                         height={p.imageHeight}
-                        className="aspect-[4/3] w-full rounded-[14px] object-cover"
+                        className="aspect-[4/3] w-full rounded-[14px] object-cover max-[900px]:order-1"
                       />
                     </>
                   )}
@@ -415,7 +389,7 @@ export default function Home() {
       </section>
 
       {/* WHY IT MATTERS */}
-      <section className="mx-auto grid max-w-[1200px] grid-cols-[0.9fr_1.1fr] items-center gap-14 px-8 py-[90px] max-[900px]:grid-cols-1 max-[900px]:py-14 max-[600px]:px-5">
+      <section className="mx-auto grid max-w-[1200px] grid-cols-[0.9fr_1.1fr] items-center gap-14 px-8 py-[90px] max-[900px]:grid-cols-1 max-[900px]:gap-6 max-[900px]:py-14 max-[600px]:px-5">
         <Image
           src="/farmer-walking-through-tall-grass-at-dusk.jpg"
           alt="Rural community outreach on snakebite prevention"
@@ -425,7 +399,7 @@ export default function Home() {
         />
         <div>
           <Eyebrow>Why Snakebite Matters</Eyebrow>
-          <h2 className="m-0 mb-5 text-[32px] font-display font-extrabold tracking-[-0.01em]">
+          <h2 className="m-0 mb-5 text-[24px] font-display font-extrabold tracking-[-0.01em] sm:text-[32px]">
             A crisis hiding in plain sight
           </h2>
           <p className="text-base" style={{ color: "oklch(0.35 0.02 150)" }}>
@@ -447,7 +421,7 @@ export default function Home() {
       <section id="impact" style={{ background: "oklch(0.26 0.065 158)" }}>
         <div className="mx-auto max-w-[1200px] px-8 py-[90px] max-[900px]:py-14 max-[600px]:px-5">
           <Eyebrow color="oklch(0.75 0.09 40)">Our Impact</Eyebrow>
-          <h2 className="m-0 mb-10 text-[32px] font-display font-extrabold tracking-[-0.01em] text-white">
+          <h2 className="m-0 mb-10 text-[24px] font-display font-extrabold tracking-[-0.01em] text-white sm:text-[32px]">
             What our work builds, bite by bite
           </h2>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
@@ -474,7 +448,7 @@ export default function Home() {
       {/* PARTNERSHIPS */}
       <section className="mx-auto max-w-[1200px] px-8 py-[90px] max-[900px]:py-14 max-[600px]:px-5">
         <Eyebrow>Partnerships</Eyebrow>
-        <h2 className="m-0 mb-4 text-[32px] font-display font-extrabold tracking-[-0.01em]">
+        <h2 className="m-0 mb-4 text-[24px] font-display font-extrabold tracking-[-0.01em] sm:text-[32px]">
           No single organization solves this alone
         </h2>
         <p className="mb-9 max-w-[640px] text-base" style={{ color: "oklch(0.35 0.02 150)" }}>
@@ -499,7 +473,7 @@ export default function Home() {
       <section id="get-involved" className="border-t border-b bg-white" style={{ borderColor: line }}>
         <div className="mx-auto max-w-[1200px] px-8 py-[90px] max-[900px]:py-14 max-[600px]:px-5">
           <Eyebrow>Get Involved</Eyebrow>
-          <h2 className="m-0 mb-10 font-display text-[36px] font-extrabold tracking-[-0.01em]">
+          <h2 className="m-0 mb-10 font-display text-[26px] font-extrabold tracking-[-0.01em] sm:text-[36px]">
             Your role in ending a preventable crisis
           </h2>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-5">
@@ -533,11 +507,11 @@ export default function Home() {
       {/* CONTACT */}
       <section
         id="contact"
-        className="mx-auto grid max-w-[1200px] grid-cols-2 gap-14 px-8 py-[90px] max-[900px]:grid-cols-1 max-[900px]:py-14 max-[600px]:px-5"
+        className="mx-auto grid max-w-[1200px] grid-cols-2 gap-14 px-8 py-[90px] max-[900px]:grid-cols-1 max-[900px]:gap-6 max-[900px]:py-14 max-[600px]:px-5"
       >
         <div>
           <Eyebrow>Contact Us</Eyebrow>
-          <h2 className="m-0 mb-5 text-[32px] font-display font-extrabold tracking-[-0.01em]">
+          <h2 className="m-0 mb-5 text-[24px] font-display font-extrabold tracking-[-0.01em] sm:text-[32px]">
             Let&apos;s talk
           </h2>
           <p className="text-base" style={{ color: "oklch(0.35 0.02 150)" }}>
@@ -558,7 +532,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className="grid gap-3.5 rounded-xl p-8"
+          className="grid gap-3.5 rounded-xl p-6 sm:p-8"
           style={{ background: "oklch(0.96 0.006 150)" }}
         >
           <input
@@ -635,7 +609,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className="mx-auto max-w-[1200px] border-t px-8 py-5 text-center text-[13px]"
+          className="mx-auto max-w-[1200px] border-t px-8 py-5 text-center text-[13px] max-[600px]:px-5"
           style={{ borderColor: "oklch(0.35 0.05 158)" }}
         >
           © 2026 Snakebite Control Network (S-CONET). All Rights Reserved.
@@ -645,17 +619,23 @@ export default function Home() {
   );
 }
 
-function PillarText({ pillar }: { pillar: (typeof pillars)[number] }) {
+function PillarText({
+  pillar,
+  className,
+}: {
+  pillar: (typeof pillars)[number];
+  className?: string;
+}) {
   return (
-    <div>
+    <div className={className}>
       <div className="mb-3.5 flex items-baseline gap-3.5">
         <span
-          className="font-display text-[42px] leading-none font-extrabold"
+          className="font-display text-[32px] leading-none font-extrabold sm:text-[42px]"
           style={{ color: pillar.numberColor }}
         >
           {pillar.number}
         </span>
-        <h3 className="m-0 font-display text-[28px] font-extrabold tracking-[-0.01em]">
+        <h3 className="m-0 font-display text-[22px] font-extrabold tracking-[-0.01em] sm:text-[28px]">
           {pillar.title}
         </h3>
       </div>
