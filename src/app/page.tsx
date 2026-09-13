@@ -223,7 +223,7 @@ export default function Home() {
             alt="S-CONET team and community fieldwork"
             width={1456}
             height={1088}
-            className="h-[220px] w-full rounded-[14px] object-cover sm:h-[280px] lg:h-[340px]"
+            className="-mt-2 h-[220px] w-full rounded-[14px] object-cover sm:h-[280px] lg:h-[340px]"
           />
         </div>
         <div data-reveal className="mt-12">
