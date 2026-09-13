@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "S-CONET — Snakebite Control Network",
   description:
     "S-CONET unites clinicians, researchers, and communities across sub-Saharan Africa to close the gap between a bite and life-saving care.",
+  icons: {
+    icon: "/sconet-favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
