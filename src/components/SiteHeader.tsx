@@ -56,7 +56,7 @@ export default function SiteHeader() {
 
         <a
           href="#get-involved"
-          className="btn-rust rounded-full px-[18px] py-2.5 text-sm font-bold text-white max-[900px]:hidden"
+          className="btn-gold rounded-full px-[18px] py-2.5 text-sm font-bold text-white max-[900px]:hidden"
         >
           Partner With Us
         </a>
@@ -102,7 +102,7 @@ export default function SiteHeader() {
             <a
               href="#get-involved"
               onClick={() => setOpen(false)}
-              className="btn-rust mt-2 rounded-full px-5 py-3 text-center text-sm font-bold text-white"
+              className="btn-gold mt-2 rounded-full px-5 py-3 text-center text-sm font-bold text-white"
             >
               Partner With Us
             </a>

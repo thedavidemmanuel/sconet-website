@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Karla } from "next/font/google";
+import SmoothAnchors from "@/components/SmoothAnchors";
+import ScrollReveal from "@/components/ScrollReveal";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -23,7 +25,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${manrope.variable} ${karla.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <SmoothAnchors />
+        <ScrollReveal />
+        {children}
+      </body>
     </html>
   );
 }
