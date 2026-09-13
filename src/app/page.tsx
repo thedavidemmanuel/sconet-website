@@ -199,7 +199,7 @@ export default function Home() {
         <h2 className="m-0 mb-6 font-display text-[26px] font-extrabold tracking-[-0.01em] sm:text-[36px]">
           Who We Are
         </h2>
-        <div data-reveal className="grid grid-cols-[1.1fr_0.9fr] items-center gap-12 max-[900px]:grid-cols-1">
+        <div data-reveal className="grid grid-cols-[1.1fr_0.9fr] items-start gap-12 max-[900px]:grid-cols-1">
           <div>
             <p className="text-[17px]" style={{ color: "oklch(0.35 0.02 150)" }}>
               Every five minutes, someone in sub-Saharan Africa is bitten by a
