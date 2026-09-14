@@ -116,6 +116,32 @@ function Eyebrow({ children, color = gold }: { children: ReactNode; color?: stri
   );
 }
 
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0">
+      <rect x="3" y="5.5" width="18" height="13" rx="2.5" />
+      <path d="M4 7.5l8 5.5 8-5.5" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0">
+      <path d="M7.1 3.5h3l1.4 4.2-2.1 1.8a12.4 12.4 0 0 0 5.1 5.1l1.8-2.1 4.2 1.4v3c0 1-.8 1.8-1.8 1.7A17 17 0 0 1 5.4 5.3c-.1-1 .7-1.8 1.7-1.8Z" />
+    </svg>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0">
+      <path d="M12 21S5.5 14.7 5.5 9.8a6.5 6.5 0 1 1 13 0C18.5 14.7 12 21 12 21Z" />
+      <circle cx="12" cy="9.6" r="2.4" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <div>
@@ -535,21 +561,35 @@ export default function Home() {
           </div>
           <div>
             <div className="mb-3.5 text-sm font-bold text-white">Contact</div>
-            <div className="grid gap-2.5 text-sm">
-              <a href="mailto:hello@sconetafrica.org" style={{ color: "oklch(0.85 0.01 150)" }}>
-                hello@sconetafrica.org
+            <div className="grid gap-3 text-sm">
+              <a
+                href="mailto:hello@sconetafrica.org"
+                className="flex items-start gap-2.5"
+                style={{ color: "oklch(0.85 0.01 150)" }}
+              >
+                <MailIcon />
+                <span>hello@sconetafrica.org</span>
               </a>
-              <a href="tel:+2348100654883" style={{ color: "oklch(0.85 0.01 150)" }}>
-                +234 810 065 4883
+              <a
+                href="tel:+2348100654883"
+                className="flex items-start gap-2.5"
+                style={{ color: "oklch(0.85 0.01 150)" }}
+              >
+                <PhoneIcon />
+                <span>+234 810 065 4883</span>
               </a>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=C%2FO+Sugudpidi+Drugs+and+Stores%2C+Adjacent+Divisional+Police+Headquarters%2C+Yola+Road%2C+Kaltungo%2C+Gombe+State"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-start gap-2.5"
                 style={{ color: "oklch(0.85 0.01 150)" }}
               >
-                C/O Sugudpidi Drugs and Stores, Adjacent Divisional Police
-                Headquarters, Yola Road, Kaltungo, Gombe State
+                <PinIcon />
+                <span>
+                  C/O Sugudpidi Drugs and Stores, Adjacent Divisional Police
+                  Headquarters, Yola Road, Kaltungo, Gombe State
+                </span>
               </a>
             </div>
           </div>
